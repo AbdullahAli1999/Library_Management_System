@@ -18,7 +18,7 @@ public class UserService {
     public boolean addUsers(User user){
         for (int i = 0; i < users.size(); i++) {
             User user1 = users.get(i);
-            if(user1.getId() == users.get(i).getId()){
+            if(user1.getId() == user.getId()){
                 return false;
             }
         }
@@ -29,7 +29,7 @@ public class UserService {
     public boolean updateUsers(int id , User user){
         for (int i = 0; i < users.size(); i++) {
             if(users.get(i).getId() == id){
-                users.set(id,user);
+                users.set(i,user);
                 return true;
             }
         }
@@ -39,7 +39,7 @@ public class UserService {
     public boolean deleteUsers(int id){
         for (int i = 0; i < users.size(); i++) {
             if(users.get(i).getId() == id){
-                users.remove(id);
+                users.remove(users.get(i));
                 return true;
             }
         }
